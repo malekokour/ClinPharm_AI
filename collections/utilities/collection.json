@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "collection": "utilities",
+  "title": "Utilities",
+  "scientific_collection": false,
+  "summary": "Optional cross-collection tools. They help a professional establish reusable working context before a task begins; they never perform the task and never become a prerequisite for a workflow skill.",
+  "maintainer": "Malek Okour",
+  "review_cadence": "per release",
+  "updated": "2026-08-04",
+  "skills": [
+    {
+      "id": "build-work-context",
+      "title": "Pharma Work Context",
+      "status": "released",
+      "workflow": "Build, update, refresh and export portable work context for pharmaceutical and biotech professionals, so an assistant understands role, sources, constraints and approval rules before attempting work.",
+      "modes": [
+        "CREATE",
+        "UPDATE",
+        "PROJECT",
+        "REFRESH",
+        "EXPORT"
+      ],
+      "optional": true,
+      "never": [
+        "required by any workflow skill",
+        "a substitute for qualified scientific, regulatory or medical judgement",
+        "used for patient-specific clinical decisions"
+      ],
+      "decision": "PS-D003",
+      "previous_id": "pharma-context-builder",
+      "rename_note": "Renamed 2026-08-05. The prior identifier carried a trailing 'builder' suffix that the naming grammar bans. It was retained only because it was the single published identifier; deleting the prior repository and its release removed that compatibility obligation entirely, so the exception was closed rather than carried forward. See PS-D013.",
+      "evidence_level": "synthetic-example-and-eval-suite"
+    }
+  ]
+}

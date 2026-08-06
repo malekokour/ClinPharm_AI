@@ -1,0 +1,17 @@
+[project]
+name = "ClinPharm_AI-tooling"
+version = "0.1.0"
+description = "Development and validation tooling for ClinPharm AI"
+requires-python = ">=3.11"
+dependencies = [
+  "python-docx>=1.1,<2",
+  "Pillow>=12.2,<13",
+]
+
+[tool.ClinPharm_AI]
+canonical-starter = "starter/build-work-context/Pharma-Work-Context.md"
+generated-starter = "starter/build-work-context/Pharma-Work-Context.docx"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 96

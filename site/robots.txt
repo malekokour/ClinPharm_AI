@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malekokour.github.io/ClinPharm_AI/sitemap.xml

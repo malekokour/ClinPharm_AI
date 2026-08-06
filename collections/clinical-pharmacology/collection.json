@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0",
+  "collection": "clinical-pharmacology",
+  "title": "Clinical Pharmacology",
+  "summary": "Bounded, repeatable workflows a clinical pharmacologist owns or reviews across the document spine — protocols, study reports, evidence packages, submission summaries and labelling content. Every skill reviews, reconciles, structures or flags; qualified humans decide, approve, sign off and submit.",
+  "maintainer": "Malek Okour",
+  "review_cadence": "per release",
+  "updated": "2026-08-04",
+  "naming_grammar": "<action>-<professional-object>",
+  "skills": [
+    {
+      "id": "review-csr-pk-consistency",
+      "title": "CSR PK Consistency Review",
+      "status": "released",
+      "wave": 1,
+      "workflow": "Review PK content across the CSR synopsis, body, tables, figures and permitted source outputs, then produce a source-linked discrepancy register and QC memo for qualified human resolution.",
+      "outputs": [
+        "source-linked PK discrepancy register",
+        "QC memo",
+        "source reconciliation table",
+        "human-review record"
+      ],
+      "modes": [
+        "FULL-QC",
+        "SYNOPSIS-QC",
+        "TLF-SPOT-CHECK",
+        "UPDATE",
+        "CLOSEOUT"
+      ],
+      "modules": [
+        "sad-mad",
+        "food-effect"
+      ],
+      "shared_tools": [
+        "pk-parameter-plausibility",
+        "cross-document-consistency",
+        "ratio-statistic"
+      ],
+      "never": [
+        "edits the CSR",
+        "reruns NCA or any other analysis",
+        "decides which conflicting scientific value is correct",
+        "selects a dose",
+        "makes a regulatory commitment",
+        "approves or signs off",
+        "submits or sends anything externally"
+      ],
+      "activation_neighbours": [
+        "review-protocol-pk-sections",
+        "verify-nca-outputs"
+      ],
+      "research_trace": [
+        "CP-WF-015",
+        "CP-WF-016"
+      ],
+      "decision": "PS-D012",
+      "evidence_level": "synthetic-benchmark-pending-run"
+    },
+    {
+      "id": "review-protocol-pk-sections",
+      "title": "Protocol PK Section Review",
+      "status": "built",
+      "wave": 2,
+      "workflow": "Review clinical pharmacology and PK protocol sections and their stated assumptions.",
+      "gate": "Activation separation against review-csr-pk-consistency must pass before release. The research names this pair as its residual architectural risk.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run. Activation separation against review-csr-pk-consistency untested.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-ddi-evidence",
+      "title": "DDI Evidence Review",
+      "status": "built",
+      "wave": 2,
+      "workflow": "Review DDI evidence, study design, analysis, interpretation and gaps.",
+      "gate": "Must cite and defer to licensed interaction databases, never replicate them. Replication of curated DDI databases is an excluded use.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run. M12 decision-tree checker not implemented.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "reconcile-cross-document-facts",
+      "title": "Cross-Document Fact Reconciliation",
+      "status": "built",
+      "wave": 2,
+      "workflow": "Reconcile clinical pharmacology facts across the programme document spine.",
+      "gate": "Consumes the shared cross-document consistency tool in programme mode. Ships only after that engine is proven in document mode by review-csr-pk-consistency.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run. T05 programme mode not exercised against a multi-document thread.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-bioanalytical-report",
+      "title": "Bioanalytical Report Review",
+      "status": "built",
+      "wave": 3,
+      "workflow": "Review bioanalytical report content relevant to PK interpretation.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No fixture or evals. Tier C: the research withheld a card because the reviewable surface reduces to the shared ICH M10 rubric.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "verify-nca-outputs",
+      "title": "NCA Output Verification",
+      "status": "built",
+      "wave": 3,
+      "workflow": "Verify NCA outputs, units, derivations and internal consistency.",
+      "gate": "Reviewer-side only. The performer-versus-reviewer split varies by company and is a configurable input, never an assumed organisational model.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run. Activation separation against review-csr-pk-consistency and review-bioanalytical-report untested.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "assess-development-plan-gaps",
+      "title": "Development Plan Gap Assessment",
+      "status": "built",
+      "wave": 4,
+      "workflow": "Assess a clinical pharmacology development plan for evidence and study gaps.",
+      "gate": "The merge of plan-gap and evidence-gap assessment into one skill is an unvalidated assumption. Practitioner validation may split it back apart.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run. The plan-gap / evidence-gap merge remains an unvalidated assumption.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "prepare-briefing-package-content",
+      "title": "Briefing Package Content",
+      "status": "built",
+      "wave": 4,
+      "workflow": "Prepare and review clinical pharmacology briefing-package content and open questions.",
+      "gate": "Commitment boundary must be explicit; the skill prepares, it never commits.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "map-agency-question-evidence",
+      "title": "Agency Question Evidence Map",
+      "status": "built",
+      "wave": 4,
+      "workflow": "Map an authority question to evidence, gaps, owners and a reviewed response draft.",
+      "gate": "States no numeric turnaround norm — the commonly cited figure is practice-only and was not evidenced.",
+      "decision": "PS-D014",
+      "prior_status": "planned",
+      "evidence_gap": "No synthetic fixture, eval suite or benchmark run.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-ctd-272-content",
+      "title": "CTD 2.7.2 Content Review",
+      "status": "built",
+      "hold_reason": "Ownership gate. CTD 2.7.2 authorship by clinical pharmacology is a practice convention assigned by no FDA, EMA or ICH text. The accountable owner must be a configurable input, validated against at least two documented organisational models before release.",
+      "decision": "PS-D014",
+      "prior_status": "held",
+      "evidence_gap": "No fixture or evals. OWNERSHIP GATE open: 2.7.2 authorship is a practice convention assigned by no FDA, EMA or ICH text; owner-configurability not validated against two documented organisational models.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-uspi-section-12-content",
+      "title": "USPI Section 12 Content Review",
+      "status": "built",
+      "hold_reason": "Legally sensitive. Label text is binding. Deliberately scoped as a review contract rather than an authoring one; released only after review-only skills have demonstrated governance in practice.",
+      "decision": "PS-D014",
+      "prior_status": "held",
+      "evidence_gap": "No fixture or evals. LEGALLY SENSITIVE: label text is binding. Review-only contract not yet reviewed by a qualified labelling reviewer.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-fih-dose-rationale",
+      "title": "FIH Dose Rationale Review",
+      "status": "built",
+      "hold_reason": "Higher risk. Safety-critical IND gate with dose adjacency. Review-only framing; the skill never derives or proposes a starting dose.",
+      "decision": "PS-D014",
+      "prior_status": "held",
+      "evidence_gap": "No fixture or evals. HIGHER-RISK, dose-adjacent. Hardened review gate not validated with a practitioner.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-study-conduct-pk",
+      "title": "Study Conduct PK Review",
+      "status": "built",
+      "hold_reason": "Risk veto recorded in the research scoring. Real-time, blinding-constrained and safety-critical committee work.",
+      "decision": "PS-D014",
+      "prior_status": "held",
+      "evidence_gap": "No fixture or evals. RISK VETO recorded in the research scoring (55.0), the lowest-scored candidate. Scope restricted to review of an already-assembled package.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "prepare-dose-justification-evidence",
+      "title": "Dose Justification Evidence",
+      "status": "built",
+      "hold_reason": "Risk veto recorded in the research scoring. Output sits one step from a registration-dose decision; humans must own the dose call.",
+      "decision": "PS-D014",
+      "prior_status": "held",
+      "evidence_gap": "No fixture or evals. RISK VETO recorded in the research scoring (62.5) — output sits one step from a registration-dose decision.",
+      "evidence_level": "package-only-no-evaluation"
+    },
+    {
+      "id": "review-model-analysis-deliverable",
+      "title": "Model Analysis Deliverable Review",
+      "status": "built",
+      "deferred_to": "pharmacometrics",
+      "defer_reason": "Proposed for Pharmacometrics primary ownership — the modelling function owns the workflow outcome. Its disposition belongs to the commissioned Pharmacometrics research, not to this collection.",
+      "decision": "PS-D017",
+      "prior_status": "deferred",
+      "evidence_gap": "No fixture or evals. Tier C: proposed for PHARMACOMETRICS primary ownership; collection assignment provisional pending the returning PMx research. Activation against verify-nca-outputs and review-ctd-272-content untested.",
+      "evidence_level": "package-only-no-evaluation"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "patient-level-clinical-decision-support",
+      "reason": "Outside the public product boundary; patient-specific risk."
+    },
+    {
+      "id": "autonomous-dose-decisions",
+      "reason": "Dose selection, escalation and stopping belong to human committees."
+    },
+    {
+      "id": "pharmacometric-model-execution",
+      "reason": "Model execution is pharmacometrics work, not a skill capability."
+    },
+    {
+      "id": "ddi-database-replication",
+      "reason": "Curated interaction databases are licensed; cite and defer, never replicate."
+    },
+    {
+      "id": "gxp-validation-claims",
+      "reason": "No skill in this library carries a GxP qualification or any form of clinical validation."
+    }
+  ]
+}

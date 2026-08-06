@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClinPharm AI — Agent Skills for clinical pharmacology document review</title>
+    <meta name="description" content="Portable Agent Skills that check clinical pharmacology documents for internal inconsistencies. Mechanical findings with stated denominators. No dose recommendations.">
+    <meta name="theme-color" content="#102a43">
+    <meta property="og:title" content="ClinPharm AI">
+    <meta property="og:description" content="Agent Skills that check clinical pharmacology documents for internal inconsistencies — and say what they found without pretending to clinical judgment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://malekokour.github.io/ClinPharm_AI/">
+    <meta property="og:image" content="https://malekokour.github.io/ClinPharm_AI/assets/social-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://malekokour.github.io/ClinPharm_AI/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ClinPharm AI home">CLINPHARM <span>AI</span></a>
+      <nav aria-label="Primary">
+        <a href="#start">Start</a>
+        <a href="#how">How it works</a>
+        <a href="#evidence">Evidence</a>
+        <a href="https://github.com/malekokour/ClinPharm_AI">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div>
+          <p class="eyebrow">OPEN • PORTABLE • HUMAN-GOVERNED</p>
+          <h1>Find what the documents disagree about.</h1>
+          <p class="lede">Portable Agent Skills that check a Clinical Study Report, protocol, or briefing document against its own sources — and report what they found without pretending to clinical judgment they have not earned.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/malekokour/ClinPharm_AI/tree/main/skills">Browse the skills</a>
+            <a class="button secondary" href="https://github.com/malekokour/ClinPharm_AI">View the source</a>
+          </div>
+          <p class="fine">No account, backend, analytics, or document upload to this site.</p>
+        </div>
+        <div class="context-stack" aria-label="What a review produces">
+          <div><strong>01</strong><span>Source Preflight</span></div>
+          <div><strong>02</strong><span>Mechanical Findings</span></div>
+          <div><strong>03</strong><span>Defect Register</span></div>
+          <div><strong>04</strong><span>Human Review Gate</span></div>
+        </div>
+      </section>
+
+      <section id="start">
+        <p class="eyebrow">SIXTEEN PACKAGES — TWO PROVEN, FOURTEEN BUILT</p>
+        <h2>Honest status, not a marketing count.</h2>
+        <div class="cards">
+          <article>
+            <span class="number">01</span>
+            <h3>Released — 2</h3>
+            <p>The evaluation gate passed: planted-defect recall and precision met threshold, no Critical missed, activation measured against named neighbours.</p>
+            <a href="https://github.com/malekokour/ClinPharm_AI/tree/main/skills/review-csr-pk-consistency">Inspect the hero skill →</a>
+          </article>
+          <article>
+            <span class="number">02</span>
+            <h3>Built — 14</h3>
+            <p>The package exists and validates, but its evaluation has <strong>not</strong> been run. Each declares an <code>evidence_gap</code> naming exactly what is missing.</p>
+            <a href="https://github.com/malekokour/ClinPharm_AI/blob/main/.github/GOVERNANCE.md">Why that distinction →</a>
+          </article>
+          <article>
+            <span class="number">03</span>
+            <h3>Use one</h3>
+            <p>Attach a starter to an ordinary chat, or install a package ZIP in any host that supports portable Agent Skills. Each vendors what it needs and works standalone.</p>
+            <a href="https://github.com/malekokour/ClinPharm_AI/tree/main/starter">Get a starter →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo" id="how">
+        <div>
+          <p class="eyebrow">SYNTHETIC DEMONSTRATION</p>
+          <h2>Every finding cites where it came from.</h2>
+          <p>A review reads the documents you permit, compares values across them, and reports each disagreement with both sides and their locations. It never decides which value is right — that is the reviewer's job, and the tool says so.</p>
+          <p>Shown here: <code>build-work-context</code>, the released context utility. Fictional throughout. Missing details stay unknown rather than being invented.</p>
+          <p class="boundary">ClinPharm AI is not medical advice, clinical decision support, a validated GxP system, or a replacement for scientific and regulatory judgment. No skill recommends a dose.</p>
+        </div>
+        <img src="assets/workflow.gif" width="960" height="540" loading="lazy" alt="Synthetic demonstration showing a fictional user attaching the ClinPharm AI chat starter, answering a short interview, and receiving a reusable professional work-context file.">
+      </section>
+
+      <section id="evidence">
+        <p class="eyebrow">MEASURED, NOT MARKETED</p>
+        <h2>What was actually tested.</h2>
+        <div class="evidence-grid">
+          <div>
+            <strong>12 planted defects</strong>
+            <span>Expert-keyed fixture: 5 Critical, 4 Major, 3 Minor</span>
+          </div>
+          <div>
+            <strong>6/6 script recall</strong>
+            <span>Deterministic path, 0 of 5 false-positive traps triggered</span>
+          </div>
+          <div>
+            <strong>14 unevaluated</strong>
+            <span>Stated as <code>built</code>, never counted as proven</span>
+          </div>
+        </div>
+        <p>Script-path results only; model-path runs have not been executed. The result is dated and task-specific and does not establish cross-model performance. Review the <a href="https://github.com/malekokour/ClinPharm_AI/tree/main/benchmark">prompts, raw outputs, rubric, scores, and limitations</a>, or read the <a href="https://github.com/malekokour/ClinPharm_AI/tree/main/evals">fixtures and expert keys</a>.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">WHERE THE SKILLS APPLY</p>
+        <h2>Clinical pharmacology, end to end.</h2>
+        <ul class="departments">
+          <li>CSR PK consistency</li>
+          <li>Protocol PK sections</li>
+          <li>NCA output verification</li>
+          <li>DDI evidence</li>
+          <li>First-in-human dose rationale</li>
+          <li>CTD 2.7.2 content</li>
+          <li>USPI Section 12 content</li>
+          <li>Agency question evidence</li>
+        </ul>
+      </section>
+
+      <section class="cta">
+        <p class="eyebrow">BUILD THE NEXT SKILL</p>
+        <h2>Which review should become portable next?</h2>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/malekokour/ClinPharm_AI/issues/new?template=skill_request.yml">Request a skill</a>
+          <a class="button secondary" href="https://github.com/malekokour/ClinPharm_AI/blob/main/docs/ROADMAP.md">View the roadmap</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>ClinPharm AI • MIT licensed</span>
+      <span><a href="https://github.com/malekokour/ClinPharm_AI/security">Security</a> · <a href="https://github.com/malekokour/ClinPharm_AI/blob/main/CONTRIBUTING.md">Contributing</a></span>
+    </footer>
+  </body>
+</html>

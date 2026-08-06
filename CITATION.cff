@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use ClinPharm AI, please cite this repository."
+title: "ClinPharm AI"
+type: software
+authors:
+  - family-names: "Okour"
+    given-names: "Malek"
+version: 0.1.0
+date-released: 2026-07-30
+license: MIT
+repository-code: "https://github.com/malekokour/ClinPharm_AI"
+url: "https://malekokour.github.io/ClinPharm_AI/"
+abstract: "Portable Agent Skills that teach AI how pharmaceutical professionals work."
